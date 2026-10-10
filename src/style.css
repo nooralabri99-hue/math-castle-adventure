@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700;800&display=swap");
+:root {
+  font-family: "Changa", Tahoma, Arial, sans-serif;
+  color: #253459;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  touch-action: none;
+}
+button:focus-visible {
+  outline: 3px solid #f3aa35;
+  outline-offset: 4px;
+}
+main {
+  height: 100dvh;
+  min-height: 540px;
+  overflow: hidden;
+  position: relative;
+  background: #b8e4fb;
+}
+canvas {
+  display: block;
+}
+header {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  left: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #ffffffed;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 12px 20px;
+  box-shadow: 0 8px 30px #39496614;
+}
+.logo {
+  background: #7357cf;
+  color: #fff;
+  font-size: 34px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  text-align: center;
+}
+h1 {
+  font-size: 21px;
+  margin: 0;
+  font-weight: 800;
+}
+header p {
+  margin: 0;
+  font-size: 12px;
+  color: #75819a;
+}
+.score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 18px;
+  background: #fff6df;
+  border: 2px solid #fff;
+}
+.score strong {
+  font-size: 28px;
+}
+.score span {
+  font-size: 25px;
+}
+.score small {
+  font-size: 13px;
+}
+.journey {
+  position: absolute;
+  right: 28px;
+  top: 132px;
+  width: 248px;
+  background: #fffffff0;
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 12px 40px #26356112;
+}
+.eyebrow {
+  font-size: 11px;
+  color: #9677d9;
+  font-weight: 700;
+}
+.journey h2 {
+  margin: 4px 0;
+  font-size: 20px;
+}
+.journey p {
+  font-size: 11px;
+  color: #78849b;
+  margin: 4px 0 18px;
+}
+.door-list {
+  display: grid;
+  gap: 10px;
+}
+.door-list > div {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.door-list span {
+  width: 29px;
+  height: 32px;
+  border-radius: 9px 9px 4px 4px;
+  color: white;
+  text-align: center;
+  line-height: 32px;
+}
+.door-list b {
+  font-size: 12px;
+}
+.door-list small {
+  margin-right: auto;
+  font-size: 10px;
+  color: #939cb1;
+}
+.door-list .done small {
+  color: #239c71;
+}
+.progress {
+  height: 7px;
+  background: #ebeaf4;
+  border-radius: 10px;
+  margin: 22px 0 7px;
+  overflow: hidden;
+}
+.progress i {
+  display: block;
+  background: #9475e5;
+  height: 100%;
+  transition: width 0.5s;
+}
+.journey > small {
+  color: #8a92a6;
+  font-size: 11px;
+}
+.hint {
+  position: absolute;
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #253459da;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+footer {
+  position: absolute;
+  bottom: 22px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+footer span {
+  background: #ffffffe8;
+  padding: 10px 18px;
+  border-radius: 12px;
+}
+footer button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 18px;
+  background: #fff;
+  color: #53617c;
+}
+.touch {
+  position: absolute;
+  bottom: 78px;
+  left: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  gap: 5px;
+  direction: ltr;
+}
+.touch button {
+  border: 1px solid #fff;
+  background: #ffffffde;
+  border-radius: 12px;
+  font-size: 22px;
+  color: #5d5583;
+  height: 42px;
+}
+.touch button:first-child {
+  grid-column: 2;
+}
+.touch button:nth-child(2) {
+  grid-column: 1;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c28554d;
+  backdrop-filter: blur(6px);
+  padding: 20px;
+}
+.modal {
+  width: 480px;
+  max-width: 100%;
+  text-align: center;
+  background: #fffdf8;
+  padding: 32px;
+  border-radius: 30px;
+  border: 3px solid #fff;
+  box-shadow: 0 25px 100px #20274640;
+}
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  color: #805ac9;
+  background: #efe8fc;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+.hero-icon {
+  font-size: 68px;
+  margin: 8px 0;
+}
+.modal h2 {
+  font-size: 32px;
+  margin: 12px 0;
+}
+.modal p {
+  color: #7e859d;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.lesson {
+  background: #f4f0ff;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 16px;
+  margin: 22px 0;
+}
+.lesson small {
+  font-size: 12px;
+  color: #847998;
+}
+.primary {
+  border: 0;
+  color: #fff;
+  background: linear-gradient(135deg, #9672ea, #7049c5);
+  border-radius: 15px;
+  padding: 13px 20px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 17px;
+  box-shadow: 0 6px 0 #5935a5;
+  margin-bottom: 18px;
+}
+.primary:hover {
+  filter: brightness(1.08);
+}
+.welcome > small {
+  font-size: 11px;
+  color: #9a9fb1;
+}
+.equation {
+  font-size: 38px;
+  font-weight: 700;
+  background: #f0ebfa;
+  border-radius: 16px;
+  padding: 18px;
+  margin: 22px 0;
+  color: #6d4eaf;
+}
+.answers {
+  display: flex;
+  gap: 12px;
+}
+.answers button {
+  flex: 1;
+  border: 2px solid #e5dbee;
+  border-radius: 14px;
+  background: #fff;
+  padding: 15px 5px;
+  font-size: 24px;
+  color: #66508f;
+}
+.answers button:hover {
+  background: #eee5ff;
+  border-color: #9374d7;
+}
+.feedback {
+  min-height: 50px;
+  font-size: 12px !important;
+}
+.total {
+  font-size: 25px;
+  color: #b37b19;
+  margin: 20px;
+}
+.secondary {
+  border: 0;
+  background: none;
+  color: #8463bf;
+}
+.error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  padding: 40px;
+  background: #e6dcfa;
+}
+@media (max-width: 760px) {
+  header {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+  .brand {
+    padding: 9px;
+    gap: 7px;
+  }
+  .logo {
+    width: 35px;
+    height: 38px;
+    font-size: 25px;
+    border-radius: 10px;
+  }
+  h1 {
+    font-size: 14px;
+  }
+  header p {
+    font-size: 9px;
+  }
+  .score {
+    padding: 7px 10px;
+    gap: 5px;
+  }
+  .score strong {
+    font-size: 20px;
+  }
+  .score small {
+    display: none;
+  }
+  .journey {
+    top: 90px;
+    right: 12px;
+    width: 166px;
+    padding: 14px;
+  }
+  .journey h2 {
+    font-size: 15px;
+  }
+  .journey p {
+    font-size: 9px;
+  }
+  .door-list b {
+    font-size: 10px;
+  }
+  .door-list small {
+    display: none;
+  }
+  .door-list span {
+    width: 22px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .door-list {
+    gap: 7px;
+  }
+  .hint {
+    font-size: 10px;
+    bottom: 150px;
+    padding: 8px 12px;
+  }
+  footer {
+    left: 12px;
+    right: 12px;
+    font-size: 10px;
+  }
+  footer span {
+    padding: 8px;
+  }
+  .touch {
+    left: 12px;
+  }
+  .modal {
+    padding: 24px;
+  }
+  .modal h2 {
+    font-size: 27px;
+  }
+  .equation {
+    font-size: 30px;
+  }
+  .answers button {
+    font-size: 20px;
+  }
+}
